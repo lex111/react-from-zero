@@ -1,23 +1,23 @@
 <!doctype html>
 
-<title>00 Object Elements - React From Zero</title>
+<title>00 Elementos de Objetos - React do Zero</title>
 
 <script src="https://unpkg.com/react@16.4.0/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@16.4.0/umd/react-dom.development.js"></script>
 
 <div id="app">
-  <!--The render target of our React application-->
+  <!--O renderizador alvo de nossa aplicação React-->
 </div>
 
 <script>
-  // React uses ES2015 Symbols to "tag" its element-objects.
-  // It uses a magic number as fallback on older browsers.
+  // O React usa Simbolos ES2015 para "taggear" seus elementos de objetos.
+  // Ele usa numeros mágicos como um fallback para browsers antigos.
   var magicValue = (Symbol && Symbol.for("react.element")) || 0xeac7
 
-  // React uses virtual DOM elements, which become real DOM elements on a render.
-  // A virtual DOM element can be defined as a simple object literal.
-  // Normally you would use the React.createElement() to create an element.
-  // This is what the return value of a React.createElement() call could look like.
+  // O React usa elementos DOM virtuais, que se tornam reais mediante um renderizador.
+  // Um elemento virtual DOM é definido como um simples objeto literal.
+  // Normalmente você usaria o React.createElement() para criar um elemento.
+  // O valor de retorno do React.createElement() é desta forma:
   var reactElement = {
 
     // This special property will be checked by React to ensure this object
