@@ -1,6 +1,6 @@
 <!doctype html>
 
-<title>11 Lifecycle Methods - React From Zero</title>
+<title>11 Métodos do Ciclo de Vida - React do Zero</title>
 
 <script src="https://unpkg.com/react@16.4.0/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@16.4.0/umd/react-dom.development.js"></script>
@@ -10,18 +10,18 @@
 <div id="app"></div>
 
 <script type="text/babel">
-// If we use component classes, our components inherit
-// a bunch of methods, which get called by React at specific
-// times to allow us to get more control over our components
-// a few of them we already met in lesson 9
-// Here are a few new ones. Not all of them, but the most important ones
+// Se usarmos classes componentes, nossos componentes herdam
+// uma multitude de métodos, os quais são chamados pelo React em tempos
+// específicos para nos permitir maior controles sobre os componentes
+// alguns deles foram vistos na lição 9
+// Aqui estão alguns novos. Não todos eles, mas os mais importantes
 
 var TRANSLATION_FROM_SOMEWHERE = "Text from a synchronous source."
 
 var MyComponent = createReactClass({
-  // This method is for default prop values
-  // it gets called before the props are given to our component
-  // the "real" props override them if there are any
+  // Esse método é para valores padrão de propriedades
+  // é chamado antes que as propriedades sejam passadas para o componente
+  // as propriedades "reais" as sobreescrevem caso existam
   getDefaultProps: function() {
     return {
       iGetOverriden: "default",
@@ -29,28 +29,28 @@ var MyComponent = createReactClass({
     }
   },
 
-  // This method is called before a component got mounted to the DOM
-  // it returns values that are used for this.state
+  // Esse método é chamado antes que o componente seja montado no DOM
+  // retorna os valores que são usados para o this.state
   getInitialState: function() {
     return {serverData: null}
   },
 
-  // This method gets called right before the component is mounted
-  // can be used to initialize some synchronous configuration, that should
-  // be available before the component renders
+  // Esse método é chamado logo antes da montagem do componente
+  // e pode ser usado para inicializar configurações sincronas, que deveriam 
+  // estar disponíveis antes que o componente renderize
   componentWillMount: function() {
     this.TEXT = TRANSLATION_FROM_SOMEWHERE
   },
 
-  // This method will be called right after the component got mounted
-  // it's a good place to start some asynchronous tasks.
-  // For example on the first mount it shows a loading message
-  // then componentDidMount is called and gets some server data.
+  // Esse método será chamado logo após a montagem do componente
+  // é um bom local para iniciar tarefas assíncronas.
+  // Por exemplo, na primeira montagem mostra uma mensagem de loading
+  // ai o componentDidMount é chamado e pega alguns dados do servidor.
   componentDidMount: function() {
 
     var component = this
 
-    // We clean up the data and get new from somewhere
+    // Limpamos os dados e pegamos os novos dados de algum lugar
     function loadData() {
 
       component.setState({serverData: null})
@@ -61,28 +61,28 @@ var MyComponent = createReactClass({
 
     }
 
-    // Initial data load
+    // Carregamento de dados Inicial
     loadData()
 
-    // We simulate a server request every 4 seconds
+    // Simulamos uma requisição de servidor a cada 4 segundos
     this.updateInterval = setInterval(loadData, 4000)
 
   },
 
-  // This method will be called before the component gets removed from the DOM
-  // a bit like a destructor. Here we can do some cleanup.
+  // Esse método será chamado logo antes do componente ser removido do DOM
+  // parecido com um destrutor. Aqui podemos fazer uma limpeza de dados.
   componentWillUnmount: function() {
 
     clearInterval(this.updateInterval)
 
   },
 
-  // This method is called before a render when new props or state is available
-  // it won"t be called on the first render or if this.forceUpdate() is used
-  // it can be used if some state or prop changes don"t require a rerender
+  // Esse método é chamado logo antes de uma renderização quando novas propriedades ou estados estão disponíveis
+  // não será chamado na primeira renderização ou se this.forceUpdate() é usado
+  // pode ser usado se algumas mudanças de estados/propriedades não requerem uma re-renderização
   shouldComponentUpdate: function(nextProps, nextState) {
 
-    // we want to render on every change, this is the default behaviour
+    // queremos renderizar a cada mudança então esse é o comportamento padrão
     return true
 
   },
