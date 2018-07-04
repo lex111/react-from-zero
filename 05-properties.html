@@ -1,6 +1,6 @@
 <!doctype html>
 
-<title>05 Properties - React From Zero</title>
+<title>05 Propriedades - React do Zero</title>
 
 <script src="https://unpkg.com/react@16.4.0/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@16.4.0/umd/react-dom.development.js"></script>
@@ -9,7 +9,7 @@
 <div id="app"></div>
 
 <script type="text/babel">
-// Components, like elements, can use properties, too
+// Componentes, como elementos, podem usar propriedades, também
 function MyComponent(props) {
   return (
     <div className={props.className}>
@@ -21,7 +21,7 @@ function MyComponent(props) {
 
 var reactElement = <MyComponent className="abc" customData="world"/>
 
-// Which also works with an object and the spread (...) operator
+// O que também funciona com um objeto e com o operador de espalhamento
 var props = {
   className: "abc",
   customData: "world",
@@ -29,10 +29,10 @@ var props = {
 
 reactElement = <MyComponent {...props}/>
 
-// This allows components with dynamic content
+// Isso permite componentes de conteúdo dinâmico
 var planets = ["earth", "mars", "venus"]
 
-// If an array is used as "child node" each child needs a unique key-property
+// Se um array é usado como um nó filho, cada filho precisa de uma propriedade-chave única.
 var elements = planets.map(function(planet, index) {
   return <MyComponent className="myClass" customData={planet} key={index}/>
 })
