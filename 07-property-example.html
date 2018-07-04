@@ -1,6 +1,6 @@
 <!doctype html>
 
-<title>07 Property Example - React From Zero</title>
+<title>07 Exemplo de Propriedade - React do Zero</title>
 
 <script src="https://unpkg.com/react@16.4.0/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@16.4.0/umd/react-dom.development.js"></script>
@@ -10,8 +10,8 @@
 <div id="app"></div>
 
 <script type="text/babel">
-// Here's a more practical example of a component
-// it formats a date and returns a <span> containing that formatted string
+// Aqui está um exemplo mais prático de componente
+// ele formata uma data e retorna um <span> contendo a string formatada
 function DateSpan(props) {
   var date = props.date,
     day = date.getDate(),
@@ -21,13 +21,13 @@ function DateSpan(props) {
   return <span>{day}.{month}.{year}</span>
 }
 
-// Also a more sophisticated type check for the date property
-// The property is required, because there are no defaults set
+// Também uma checagem de tipo para a propriedade data mais sofisticada
+// A propriedade é obrigatória pois não há padrão definido
 DateSpan.propTypes = {
   date: PropTypes.instanceOf(Date).isRequired,
 }
 
-// We have to supply a date object and the component does the formatting
+// Devemos prover um objeto data e o componente faz a formatação
 var reactElement = <DateSpan date={new Date()}/>
 
 var renderTarget = document.getElementById("app")
