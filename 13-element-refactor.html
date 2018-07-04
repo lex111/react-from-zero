@@ -1,6 +1,6 @@
 <!doctype html>
 
-<title>13 Element Refactor - React From Zero</title>
+<title>13 Refatoração de Elementos - React do Zero</title>
 
 <script src="https://unpkg.com/react@16.4.0/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@16.4.0/umd/react-dom.development.js"></script>
@@ -10,34 +10,34 @@
 <div id="app"></div>
 
 <script type="text/babel">
-// Refactoring an element is a bit more tricky
-// First, casing of JSX determines whether a tag is an element or component
-// lower case means element
-// upper case means component
+// Refatorar um elemento é um pouco mais complexo
+// Primeiro, a capitalização do JSX determina se uma tag é um elemento ou componente
+// lowercase é elemento
+// uppercase é componente
 
 var element = <div/>
-// becomes
+// se torna
 element = React.createElement("div", null)
 
 try {
 
 var component = <Div/>
-// becomes
+// se torna
 component = React.createElement(Div, null)
 
 } catch(e) {}
 
-// Second, React converts all events these elements trigger, to
-// synthetic events. This is often not a problem, they are simply events.
-// But you can't trigger your own.
-// So even if your <Input> component accepts an onClick callback as property
-// You can't call it with the same event as an <input> element would
+// Segundo, o React converte todos os eventos que os elementos engatilham em
+// eventos sintéticos. Isso normalmente não é um problema, por serem eventos simples.
+// Mas você não pode engatilhar seus próprios.
+// Então mesmo que seu componente <Input> aceite um callback onClick como propriedade
+// Você não pode chama-la com o mesmo evento que um elemento <input> faria
 
 
-// One approach could be this.
-// We simply implement our own onChange caller
-// Here we create a number input that only calls onChange on number inputs
-// (non-numbers trigger an empty change)
+// Uma abordagem poderia ser:
+// Simplismente implementamos nossa própria chamada onChange
+// Aqui criamos um input numérico que só chama onChange com inputs numéricos
+// (não-números chamam uma mudança vazia)
 var NumberInput = createReactClass({
 
   getInitialState: function() {
@@ -46,19 +46,19 @@ var NumberInput = createReactClass({
 
   handleInput: function(e) {
 
-    // we could try to modify the event to get our data in
-    // but this could mess things up
-    // instead we prevent this event from further actions
+    // podemos tentar modifcar o evento para inserir nossos dados
+    // mas isso pode bagunçar as coisas
+    // ao invés disso prevenimos que esse evento faça outras ações
     e.preventDefault()
 
     var newNumber = e.target.value
 
-    // filter empty-changes
+    // filtramos as mudanças vazias
     if (newNumber.length < 1 || newNumber === this.state.value) return
 
     this.setState({value: newNumber})
 
-    // then we extract our data and give it to onChange
+    // e finalmente extraimos nosso dado e passamos para onChange
     this.props.onChange(newNumber)
 
   },
@@ -76,10 +76,10 @@ function logChange(v){
 }
 
 
-// Here we see, that the new NumberInput has a different interface
-// it's onChange property implies that events will be received, but this isn't
-// the case. Also, even if we would want to call it like the original input,
-// we would need to use upper case, and wouldn't win anything
+// Aqui vemos que o novo NumberInput tem uma interface diferente
+// sua propriedade onChange implica que eventos serão recebidos, mas não é
+// o caso. Também, mesmo se quisessemos chamar como o input original
+// precisariamos usar uppercase, e não ganhariamos nada
 var reactElement = <div style={{width: 300, margin: "auto"}}>
 
   <h2>Logging number inputs</h2>
@@ -94,10 +94,10 @@ var reactElement = <div style={{width: 300, margin: "auto"}}>
 
 ReactDOM.render(reactElement, document.getElementById("app"))
 
-// Other approaches include not using "default" prop names in the first place
-// onUpdate instead of onChange
-// It could also happen that a component uses onMouseDown to do something internal
-// and triggers an onChange, which could cause confusion
-// Often components deliver richer interactions than elements in the first place
-// so their prop methods can reflect that with the name
+// Outras abordagens incluem não usar "padrões" para nomes de propriedades em primeiro lugar
+// onUpdate ao invés de onChange
+// Mas pode acontecer que um componente use onMouseDown para algo interno
+// e chame um onChange, o que poderia causar confusão
+// Comumente componentes entregam interações mais ricas que elementos em primeiro lugar
+// para que seus metodos propriedades possam refletir os com o mesmo nome
 </script>
