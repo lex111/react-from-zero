@@ -1,6 +1,6 @@
 <!doctype html>
 
-<title>14 References - React From Zero</title>
+<title>14 Referências - React do Zero</title>
 
 <script src="https://unpkg.com/react@16.4.0/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@16.4.0/umd/react-dom.development.js"></script>
@@ -10,14 +10,14 @@
 <div id="app"></div>
 
 <script type="text/babel">
-// Sometimes we need some state from an element or a component
-// or it has to be directly modified somehow. For
-// this case, we can tell React to create references.
+// Algumas vezes precisamos de um estado de um elemento ou componente
+// ou ele tem que ser modificado diretamente de alguma maneira. Para
+// este proposito, podemos fazer com que o React crie referências
 var RefComponent = createReactClass({
 
-  // First we tell React to render an input with a
-  // ref callback, it will be called, when the DOM of the input element
-  // is available
+  // Primeiro pedimos que o React renderize um input com uma
+  // callback ref, ela será chamada quando o DOM do elemento input
+  // estiver disponível
   render: function() {
     return (
       <div>
@@ -27,27 +27,27 @@ var RefComponent = createReactClass({
     )
   },
 
-  // This callback is called when the input element was mounted into the DOM
-  // and again, with null, when it was unmounted again
-  // For elements the rendered DOM node will be stored
-  // For components the instance of the component will be stored.
+  // Esse callback é chamado quando o elemento input foi montado no DOM
+  // e de novo, com null, quando ele for desmontado
+  // Para elementos o nó DOM renderizado será guardado
+  // Para componentes a instância do componente será guardada.
   handleRef(nameInput) {
-    // We save a reference to it for later use.
+    // Salvamos uma referência para o elemento/componente para uso futuro
     this.nameInput = nameInput
   },
 
-  // This callback is called when the button is clicked
-  // and uses this.nameInput to read out the value of the input.
+  // Esse callback é chamado quando o botão é clicado
+  // e usa this.nameInput para ler o valor do input.
   handleClick: function() {
     console.log(this.nameInput.value)
   },
 
 })
 
-// Since references are local to their component
-// they can be used as local IDs to get elements
-// and don't override each other when another
-// instance of the component is created
+// Uma vez que referências são locais para seu componente
+// elas podem ser usadas como IDs locais para pegar elementos
+// e não sobrescreve uma a outra quando outra 
+// instância do componente é criada
 var reactElement =
   <div>
     <RefComponent/>
