@@ -1,22 +1,22 @@
 <!doctype html>
 
-<title>06 Property Types - React From Zero</title>
+<title>06 Tipos de Propriedades - React do Zero</title>
 
 <script src="https://unpkg.com/react@16.4.0/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@16.4.0/umd/react-dom.development.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
 <script src="https://unpkg.com/prop-types@15.6.1/prop-types.js">
-// PropTypes were removed from React 16 and are now their own package
+// PropTypes foram removidos do React 16 e agora estão em seu próprio pacote
 </script>
 
 <div id="app"></div>
 
 <script type="text/babel">
-// Components get created to encapsulate stuff that should be together in one
-// place and for reuse.
-// Reuse requires the user of the component to supply the correct properties so
-// we can define a type of each property and set defaults
+// Componentes são criados para encapsular coisas que deveriam estar juntas em apenas um
+// lugar e para reuso.
+// Reuso requer que o usuário do componente proveja as propriedades corretas tal que
+// nós possamos definir um tipo de cada propriedade e definir padrões
 
 function MyComponent(props) {
   return (
@@ -27,24 +27,24 @@ function MyComponent(props) {
   )
 }
 
-// Add the propTypes (function-)property to the component function
-// to let it validate its (element-)properties
+// Adicione a propriedade(-função) do propTypes para a função do componente
+// para deixar que ela valide suas propriedades(-elemento)
 MyComponent.propTypes = {
-  // React supplies us with a bunch of types, like string
+  // O React provê diversos tipos, como string
   customData: PropTypes.string,
 }
 
-// Add defaultProps (function-)property to set the defaults
-// if nothing was provided by the user
+// Adicione a propriedade(-função) defaultProps para definir os padrões
+// caso nada seja provido pelo usuário
 MyComponent.defaultProps = {
   customData: "default",
   className: "default-class",
 }
 
-// This will show a warning in the console, because customData should be a string
+// Isso mostrará um aviso no console, porque customData deveria ser uma string
 var reactElement = <MyComponent customData={123}/>
 
-// This will use the defaults
+// Isso vai usar os padrões
 reactElement = <MyComponent/>
 
 var renderTarget = document.getElementById("app")
