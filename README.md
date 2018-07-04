@@ -15,53 +15,53 @@ Tudo roda no browser sem uma pre-compilação manual.
 
 ## Lessons
 
-[Lição 0 - Object Elements](https://github.com/andre-motta/react-from-zero/blob/master/00-object-elements.html) -
+[Lição 0 - Elementos-Objetos](https://github.com/andre-motta/react-from-zero/blob/master/00-object-elements.html) -
 [Preview](https://cdn.rawgit.com/andre-motta/react-from-zero/b31878c2/00-object-elements.html)
 
-[Lição 1 - Element Factory](https://github.com/andre-motta/react-from-zero/blob/master/01-element-factory.html) -
+[Lição 1 - Fábrica de Elementos](https://github.com/andre-motta/react-from-zero/blob/master/01-element-factory.html) -
 [Preview](https://cdn.rawgit.com/andre-motta/react-from-zero/b31878c2/01-element-factory.html)
 
 [Lição 2 - JSX](https://github.com/andre-motta/react-from-zero/blob/master/02-jsx.html) -
 [Preview](https://cdn.rawgit.com/andre-motta/react-from-zero/b31878c2/02-jsx.html)
 
-[Lição 3 - Nested Elements](https://github.com/andre-motta/react-from-zero/blob/master/03-nested-elements.html) -
+[Lição 3 - Elementos Aninhados](https://github.com/andre-motta/react-from-zero/blob/master/03-nested-elements.html) -
 [Preview](https://cdn.rawgit.com/andre-motta/react-from-zero/b31878c2/03-nested-elements.html)
 
-[Lição 4 - Components](https://github.com/andre-motta/react-from-zero/blob/master/04-components.html) -
+[Lição 4 - Componentes](https://github.com/andre-motta/react-from-zero/blob/master/04-components.html) -
 [Preview](https://cdn.rawgit.com/andre-motta/react-from-zero/b31878c2/04-components.html)
 
-[Lição 5 - Properties](https://github.com/andre-motta/react-from-zero/blob/master/05-properties.html) -
+[Lição 5 - Propriedades](https://github.com/andre-motta/react-from-zero/blob/master/05-properties.html) -
 [Preview](https://cdn.rawgit.com/andre-motta/react-from-zero/62dc2789/05-properties.html)
 
-[Lição 6 - Property Types](https://github.com/andre-motta/react-from-zero/blob/master/06-property-types.html) -
+[Lição 6 - Tipos de Propriedades](https://github.com/andre-motta/react-from-zero/blob/master/06-property-types.html) -
 [Preview](https://cdn.rawgit.com/andre-motta/react-from-zero/b31878c2/06-property-types.html)
 
-[Lição 7 - Property Example](https://github.com/andre-motta/react-from-zero/blob/master/07-property-example.html) -
+[Lição 7 - Exemplo de Propriedade](https://github.com/andre-motta/react-from-zero/blob/master/07-property-example.html) -
 [Preview](https://cdn.rawgit.com/andre-motta/react-from-zero/b31878c2/07-property-example.html)
 
-[Lição 8 - Nested Components](https://github.com/andre-motta/react-from-zero/blob/master/08-nested-components.html) -
+[Lição 8 - Componentes Aninhados](https://github.com/andre-motta/react-from-zero/blob/master/08-nested-components.html) -
 [Preview](https://cdn.rawgit.com/andre-motta/react-from-zero/b31878c2/08-nested-components.html)
 
-[Lição 9 - Component Classes](https://github.com/andre-motta/react-from-zero/blob/master/09-component-classes.html) -
+[Lição 9 - Classes Componentes](https://github.com/andre-motta/react-from-zero/blob/master/09-component-classes.html) -
 [Preview](https://cdn.rawgit.com/andre-motta/react-from-zero/b31878c2/09-component-classes.html)
 
-[Lição 10 - Example App](https://github.com/andre-motta/react-from-zero/blob/master/10-example-app.html) -
+[Lição 10 - App Exemplo](https://github.com/andre-motta/react-from-zero/blob/master/10-example-app.html) -
 [Preview](https://cdn.rawgit.com/andre-motta/react-from-zero/b31878c2/10-example-app.html)
 
-[Lição 11 - Lifecycle Methods](https://github.com/andre-motta/react-from-zero/blob/master/11-lifecycle-methods.html) -
+[Lição 11 - Métodos do Ciclo de Vida](https://github.com/andre-motta/react-from-zero/blob/master/11-lifecycle-methods.html) -
 [Preview](https://cdn.rawgit.com/andre-motta/react-from-zero/b31878c2/11-lifecycle-methods.html)
 
-[Lição 12 - Component refactor](https://github.com/andre-motta/react-from-zero/blob/master/12-component-refactor.html) -
+[Lição 12 - Refatoração de Componentes](https://github.com/andre-motta/react-from-zero/blob/master/12-component-refactor.html) -
 [Preview](https://cdn.rawgit.com/andre-motta/react-from-zero/b31878c2/12-component-refactor.html)
 
-[Lição 13 - Element Refactor](https://github.com/andre-motta/react-from-zero/blob/master/13-element-refactor.html) -
+[Lição 13 - Refatoração de Elementos](https://github.com/andre-motta/react-from-zero/blob/master/13-element-refactor.html) -
 [Preview](https://cdn.rawgit.com/andre-motta/react-from-zero/b31878c2/13-element-refactor.html)
 
-[Lição 14 - References](https://github.com/andre-motta/react-from-zero/blob/master/14-references.html) -
+[Lição 14 - Referências](https://github.com/andre-motta/react-from-zero/blob/master/14-references.html) -
 [Preview](https://cdn.rawgit.com/andre-motta/react-from-zero/b31878c2/14-references.html)
 
-[Lição 15 - Simple Integration](https://github.com/andre-motta/react-from-zero/blob/master/15-simple-integration.html) -
+[Lição 15 - Integração Simples](https://github.com/andre-motta/react-from-zero/blob/master/15-simple-integration.html) -
 [Preview](https://cdn.rawgit.com/andre-motta/react-from-zero/b31878c2/15-simple-integration.html)
 
-[Lição 16 - Advanced Integration](https://github.com/andre-motta/react-from-zero/blob/master/16-advanced-integration.html) -
+[Lição 16 - Integração Avançada](https://github.com/andre-motta/react-from-zero/blob/master/16-advanced-integration.html) -
 [Preview](https://cdn.rawgit.com/andre-motta/react-from-zero/b31878c2/16-advanced-integration.html)
