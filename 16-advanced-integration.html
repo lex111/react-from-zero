@@ -1,6 +1,6 @@
 <!doctype html>
 
-<title>16 Advanced Integration - React From Zero</title>
+<title>16 Integração Avançada - React do Zero</title>
 
 <script src="https://unpkg.com/react@16.4.0/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@16.4.0/umd/react-dom.development.js"></script>
@@ -8,22 +8,22 @@
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
 <script src="https://unpkg.com/d3@4.7.3/build/d3.min.js">
-// Sometimes we need to integrate more complex
-// libraries. Libraries that want to use the
-// DOM directly or require asynchronous interaction.
-// In this example we use D3.js, a free InfoVis library.
+// Algumas vezes devemos integrar libraries mais 
+// complexas. Libraries que querem usar o 
+// DOM diretamente ou requerem interações assíncronas.
+// Neste exemplo usamos D3.js, uma library de Visualização de Dados gratuita
 </script>
 
 <div id="app"></div>
 
 <script type="text/babel">
-// Since D3 needs to interact directly with the DOM we
-// should use a component class, because it can store
-// references to its DOM-elements.
+// Já que o D3 precisa interagir diretamente com o DOM nós
+// devemos usar uma classe componente, porque ela pode guardar
+// referências para seus elementos-DOM.
 var Visual = createReactClass({
 
-  // We simply render an empty canvas and tell React to
-  // store its reference after the render
+  // Simplesmente renderizamos um canvas vazio e dizemos para o React
+  // guardar sua referência após a renderização.
   render: function() {
     return <canvas ref={this.handleRef} width={500} height={500}/>
   },
@@ -32,38 +32,38 @@ var Visual = createReactClass({
     this.canvas = canvas
   },
 
-  // After the first render, we grab the reference
-  // to the canvas element in the DOM and pass it
-  // to the library
+  // Após a primeira renderização, pegamos a referência
+  // para o elemento canvas no DOM e passamos a referência
+  // para a library
   componentDidMount: function() {
-    // Here we also use some additional color configuration
+    // Aqui usamos uma configuração de cor adicional
     drawGraph(this.canvas, this.props.color)
   },
 
-  // We also have some fine-granular control over the re-render
-  // With the use of this lifecylce method
+  // Também temos um controle fino e granular sobre as re-renderizações
+  // com o uso deste método de ciclo de vida
   shouldComponentUpdate: function(nextProps, nextState) {
-    // Here we could tell our library the new data for props
-    // or state, so it can update the DOM elements on its own
+    // Aqui podemos passar para a library os novos dados de propriedades
+    // ou estado, para que ele possa atualizar os elementos DOM por conta própria.
 
-    // At the end we always return false so our render method
-    // isn't called and the canvas element isn't replaced
+    // No fim sempre retornamos falso para que o nosso método renderizador    
+    // não seja chamado e o elemento canvas não seja substituido
     return false
   },
 
-  // This lifecycle method can be used to free resources
-  // before the component will be removed from the DOM.
-  // Our canvas will be removed for sure, but often there
-  // is state for the library, other objects, listeners etc.
-  // they could be stored on the component and should be
-  // deleted to prevent memory leaks
+  // Esse método do ciclo de vida pode ser usado para liberar recursos
+  // antes que o componente seja removido do DOM.
+  // Nosso canvas será removido com certeza, mas normalmente existe
+  // um estado da library, outros objetos, listeners etc.
+  // eles podem ser guardados no componente e devem ser
+  // deletados para prevenir leaks de memória
   componentWillUnmount() {},
 
 })
 
-// Now we can use the library as a component
-// No need for global IDs, every instance has its own canvas
-// reference stored, also its own color property
+// Agora podemos usar a library como um componente
+// Sem a necessidade de IDs globais, cada instância tem seu próprio canvas
+// por referênciamento, e suas proprias propriedades de cor.
 var reactElement =
   <div>
     <Visual color="#f00"/>
@@ -73,11 +73,11 @@ var reactElement =
 
 ReactDOM.render(reactElement, document.getElementById("app"))
 
-// Wrapping the library interaction into a function
+// Encapsulando a interação da library em uma função
 function drawGraph(canvas, strokeColor) {
 
-  // An example from http://bl.ocks.org/mbostock/1b64ec067fcfc51e7471d944f51f1611
-  // its realeased under the GPL-V3
+  // Um exemplo de http://bl.ocks.org/mbostock/1b64ec067fcfc51e7471d944f51f1611
+  // licensiado sob a GPL-V3
 
   var n = 20
 
