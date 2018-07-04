@@ -1,6 +1,6 @@
 <!doctype html>
 
-<title>01 Element Factory - React From Zero</title>
+<title>01 Fábrica de Elementos - React do Zero</title>
 
 <script src="https://unpkg.com/react@16.4.0/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@16.4.0/umd/react-dom.development.js"></script>
@@ -8,9 +8,9 @@
 <div id="app"></div>
 
 <script>
-  // React.createElement() needs type, properties, children.
-  // This is less verbose than using plain object literals,
-  // it hides the $$type/Symbol and ref mentioned in lesson 0
+  // React.createElement() necessita de tipo, propriedades, e filhos.
+  // Isso é menos verboso que usar objetos literais
+  // isso esconde o $$type/Symbol e ref mencionados na lição 00
   var reactElement = React.createElement("h1", {
 
     className: "abc",
@@ -24,7 +24,7 @@
   }, "Hello, world!")
 
 
-  // The second argument is the property object and has to be null if empty
+  // O segundo argumento é a propriedade objeto e deve ser null caso vazia
   var anotherElement = React.createElement("p", null, "A nice text paragraph.")
 
   var renderTarget = document.getElementById("app")
