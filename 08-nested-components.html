@@ -1,6 +1,6 @@
 <!doctype html>
 
-<title>08 Nested Components - React From Zero</title>
+<title>08 Componentes Aninhados - React do Zero</title>
 
 <script src="https://unpkg.com/react@16.4.0/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@16.4.0/umd/react-dom.development.js"></script>
@@ -9,25 +9,25 @@
 <div id="app"></div>
 
 <script type="text/babel">
-// Components, like elements, can be nested
-// for this, the children property is used inside the component
+// Componentes, como elementos, podem ser aninhados
+// para isso, a propriedade filho é usada dentro do componente
 
-// This component just wraps its children in an <li> element
+// Esse componente apenas envelopa seus filhos em um elemento <li>
 function Item(props) {
   return <li>{props.children}</li>
 }
 
-// This component wraps its children into an <ul> element
+// Esse componente envelopa seus filhos em um elemento <ul>
 function List(props) {
   return <ul>{props.children}</ul>
 }
 
-// If the <List> is created without children it gets a default child
+// Se a <List> for criada sem filhos ela recee um filho default
 List.defaultProps = {
   children: <Item>Empty</Item>
 }
 
-// now we render two <List>s, without and with Items
+// Agora renderizamos duas <List>, com e sem Itens
 var reactElement =
   <div>
     <List/>
