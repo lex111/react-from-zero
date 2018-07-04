@@ -18,16 +18,16 @@
 <script type="text/babel">
 // Libraries Simples que são chamadas síncronas podem ser usadas
 // diretamente no JSX com o uso de {}, uma vez que são
-// somente chamadas de funçõesjust function calls
+// somente chamadas de funções
 var DateToday = function() {
   return <span>{moment().format("DD.MM.YYYY")}</span>
 }
 
 var tomorrow = moment().add(1, "day")
 
-// Nothing exciting happening here, just calling the library
-// and displaying its return values. First with some
-// elements, then used inside of a component.
+// Nada demais acontecendo aqui, apenas chamando a library
+// e apresentando os valores retornados. Primeiro com alguns
+// elementos, então usados dentro de um componente.
 var reactElement =
   <div>
     <h1 style={{textAlign:"center"}}>
