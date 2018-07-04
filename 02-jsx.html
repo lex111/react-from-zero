@@ -1,22 +1,22 @@
 <!doctype html>
 
-<title>02 JSX - React From Zero</title>
+<title>02 JSX - React do Zero</title>
 
 <script src="https://unpkg.com/react@16.4.0/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@16.4.0/umd/react-dom.development.js"></script>
 
 <script src="https://unpkg.com/@babel/standalone/babel.min.js">
-// Now we will use JSX, which needs to be converted to JavaScript.
-// For this we will use Babel. Babel is normally used to convert ES2015 to ES5, but
-// it also can convert JSX to ES5. Babels browser version uses text/babel script tags.
+// Agora usaremos JSX, que deve ser convertido para JavaScript
+// Para isso usaremos Babel. Normalmente o Babel é usado para converter ES2015 para ES5, mas
+// ele também converte JSX para ES5. A versão de browser do Babel usa tags de script text/babel.
 </script>
 
 <div id="app"></div>
 
 <script type="text/babel">
-// JSX is the idiomatic way of creating elements.
-// It's basically XHTML with {} for dynamic content
-// also class has to be called className
+// JSX é o jeito idiomatico de se criar elementos.
+// É basicamente XHTML com {} para conteúdos dinâmicos
+// classes devem ser chamadas de className
 var reactElement =
   <h1
     className="abc"
@@ -25,7 +25,7 @@ var reactElement =
     Hello, world!
   </h1>
 
-// Is the same as
+// É o mesmo que
 reactElement =
   React.createElement(
     "h1",
@@ -34,12 +34,12 @@ reactElement =
     "Hello, world!"
   )
 
-// JSX shines especially with simple elements that make up the majority
+// JSX brilha especialmente em elementos simples que compõem a maioria
 var anotherElement = <p>A nice text paragraph.</p>
-// Is the same as
+// É o mesmo que
 anotherElement = React.createElement("p", null, "A nice text paragraph.")
 
-// As we can see, everything else works as before
+// Como podemos ver, todo o resto funciona como antes
 var renderTarget = document.getElementById("app")
 
 ReactDOM.render(reactElement, renderTarget)
