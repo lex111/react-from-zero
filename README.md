@@ -8,6 +8,8 @@ Everything runs in the browser without a manual pre-compilation.
 
 - [![china](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/China.png) **中文/Chinese**](https://github.com/chinanf-boy/react-from-zero)
 
+- [![brazil](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/China.png) **Portugês do Brasil**](https://github.com/andre-motta/react-from-zero)
+
 ## Lessons
 
 [Lesson 0 - Object Elements](https://github.com/kay-is/react-from-zero/blob/master/00-object-elements.html) -
