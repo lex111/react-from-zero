@@ -1,6 +1,6 @@
 <!doctype html>
 
-<title>12 Component Refactor - React From Zero</title>
+<title>12 Refatoração de Componentes - React do Zero</title>
 
 <script src="https://unpkg.com/react@16.4.0/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@16.4.0/umd/react-dom.development.js"></script>
@@ -11,12 +11,12 @@
 <div id="app"></div>
 
 <script type="text/babel">
-// Refactoring is another thing that is nice with React
-// First we'll talk about refactoring one component into another
-// if you're lucky, you can just change the implementation of a component
-// and don't need to change anything at the call-site
+// Refatoração é outra coisa que é simples no React
+// Primeiro falemos sobre refatorar um componente em outro
+// se você tiver sorte, basta apenas mudar a implementação do componente
+// sem precisar de mudar nada na local da chamada da função
 
-// We start with a component that renders records somehow
+// Comecemos com um componente que renderiza registros
 function ViewBefore(props) {
   return (
     <table>
@@ -38,12 +38,12 @@ function ViewBefore(props) {
   )
 }
 
-// The component has a simple props-interface
+// O componente tem uma interface de propriedades simples
 ViewBefore.propTypes = {
   rooms: PropTypes.array.isRequired,
 }
 
-// Now we switch out the implementation with something more complicated
+// Agora mudemos a implementação para algo mais complexo
 function ViewAfter(props) {
   return (
     <div>
@@ -64,15 +64,15 @@ function ViewAfter(props) {
     </div>
   )
 }
-// We keep the props-interface the same
+// Podemos manter a interface da mesma maneira
 ViewAfter.propTypes = {
   rooms: PropTypes.array.isRequired,
 }
 
-// We could also switch it with something more dynamic
+// Também podemos trocar por algo mais dinâmico
 var ViewDynamic = createReactClass({
 
-  // We still keep the props-interface the same
+  // Ainda assim mantemos a interface a mesma
   propTypes: {
     rooms: PropTypes.array.isRequired,
   },
@@ -109,7 +109,7 @@ var ViewDynamic = createReactClass({
 
 })
 
-// Some data
+// Alguns dados
 var rooms = [
   {name:"Office", people: 10},
   {name:"Kitchen", people: 15},
@@ -117,9 +117,9 @@ var rooms = [
   {name:"Bathroom", people: 0},
 ]
 
-// As we can see the components can be used exactly the same
-// If we copy the implementation of ViewAfter into ViewBefore,
-// everything keeps working
+// Como podemos ver os componentes podem ser usados exatamente do mesmo modo
+// Se copiarmos a implementação de ViewAfter em ViewBefore,
+// tudo continua funcionando
 var reactElement =
   <div style={{margin: "auto", width: 500}}>
 
