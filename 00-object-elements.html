@@ -1,6 +1,6 @@
 <!doctype html>
 
-<title>00 Elementos de Objetos - React do Zero</title>
+<title>00 Elementos-Objetos - React do Zero</title>
 
 <script src="https://unpkg.com/react@16.4.0/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@16.4.0/umd/react-dom.development.js"></script>
@@ -10,7 +10,7 @@
 </div>
 
 <script>
-  // O React usa Simbolos ES2015 para "taggear" seus elementos de objetos.
+  // O React usa Simbolos ES2015 para marcar seus Elementos.
   // Ele usa numeros mágicos como um fallback para browsers antigos.
   var magicValue = (Symbol && Symbol.for("react.element")) || 0xeac7
 
@@ -20,42 +20,42 @@
   // O valor de retorno do React.createElement() é desta forma:
   var reactElement = {
 
-    // This special property will be checked by React to ensure this object
-    // is a React element and not just some user data
-    // React.createElement() sets it for you
+    // Essa propriedade especial será checada pelo React para garantir que o objeto
+    // é um elemento React e não somente data de usuário
+    // a React.createElement() atribui isso para você
     $$typeof: magicValue,
 
-    // This will also be checked by React. We will be talking about references
-    // later, but if you're not using them, this has to be set to null and not
+    // Isso também sera checado pelo React. Falaremos sobre referências
+    // depois, mas se você não as estiver usando, isso deve ser null e não
     // undefined
     ref: null,
 
-    // This defines the HTML-tag
+    // Isso define a tag HTML
     type: "h1",
 
-    // This defines the properties that get passed down into the element
+    // Isso define as propriedades passadas para o elemento
     props: {
 
-      // In this example there is just a single text node as child
+      // Neste exempo existe apenas um nó textual como filho
       children: "Hello, world!",
 
-      // a CSS class
+      // uma classe CSS
       className: "abc",
 
-      // styles can be passed as object literals
-      // React uses camelCase instead of dashed-case (like CSS/D3 do)
+      // estilos podem ser passados como literais 
+      // O React usa camelCase ao invés de dashed-case (como fazem o CSS/DR)
       style: {
         textAlign: "center",
       },
 
-      // event handlers can be added as properties, too
-      // React uses synthetic events, which basically try to normalize browser behaviour
+      // manipuladores de eventos podem ser adicionados como propriedades, também
+      // o React usa eventos sintáticos, que basicamente tentam normalizar o comportamento do browser
       onClick: function (notYourRegularEvent) { alert("click") },
     },
 
   }
 
-  // another element that doesn"t have much configuration
+  // outro elemento sem muita configuração
   var anotherElement = {
     $$typeof: magicValue,
     ref: null,
@@ -65,7 +65,7 @@
     },
   }
 
-  // React needs a DOM element as render target
+  // O React precisa de um elemento DOM como um alvo para renderização
   var renderTarget = document.getElementById("app")
 
   // ReactDOM is responsible for inserting the element into the DOM
