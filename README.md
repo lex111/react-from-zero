@@ -67,4 +67,4 @@ Tudo roda no browser sem uma pre-compilação manual.
 [Preview](https://cdn.rawgit.com/andre-motta/react-from-zero/b31878c2/16-advanced-integration.html)
 
 [Lição 17 - Testes de Unidade](https://github.com/andre-motta/react-from-zero/blob/master/17-unit-testing.html) -
-[Preview](https://cdn.rawgit.com/andre-motta/react-from-zero/b31878c2/17-unit-testing.html)
+[Preview](https://cdn.rawgit.com/kay-is/react-from-zero/7dc8cf9b/17-unit-testing.html)
