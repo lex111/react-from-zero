@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<title>17 Testes de Unidade - React do Zero</title>
+
+<script src="https://unpkg.com/react@16.4.0/umd/react.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script src="https://unpkg.com/mocha@5.2.0/mocha.js">
+  // a ferramenta básica de testes para o React é o Jest, mas ele não funciona direto no browser
+  // por isso usaremos somente partes do Jest (expect e jest-mock) para 
+  // ilustrar uma configuração básica de testes. O Mocha é usado como uma alternativa para rodar os testes
+</script>
+<link href="https://unpkg.com/mocha@5.2.0/mocha.css" rel="stylesheet" />
+
+<!--
+  Esse shallow renderer é necessário para renderizar componentes sem a necessidade do
+  ReactDOM ou do DOM em geral
+-->
+<script src="https://unpkg.com/react-test-renderer@16.4.1/umd/react-test-renderer-shallow.development.js"></script>
+
+<!-- essas duas bibliotecas são partes do ferramentário do Jest -->
+<script src="https://unpkg.com/expect@%3C21/umd/expect.min.js"></script>
+<script src="https://unpkg.com/jest-mock@23.2.0/build-es5/index.js"></script>
+
+<!-- o alvo da renderização dos resultados do teste Mocha -->
+<div id="mocha"></div>
+
+<script type="text/babel">
+  // se for usar Jest no ambiente padrão depois, ignore o código específico do Mocha
+  mocha.setup("bdd");
+
+  // um componente simples. Normalmente seria importado de outro arquivo
+  const MyComponent = () => (
+    <div>
+      <span className="heading">Title</span>
+    </div>
+  );
+
+  // o primeiro test, Jest e Mocha ambos usando desribe() e it()
+  describe("Component", () => {
+    it("should render", () => {
+      // um novo renderizador é criado e usado para renderizar o componente
+      const renderer = new ReactShallowRenderer();
+      renderer.render(<MyComponent />);
+
+      // os resultados aqui devem ser bem familiares da lição 00
+      let result = renderer.getRenderOutput();
+
+      // agora você pode percorrer o resultado e checar sua corretude
+      expect(result.type).toBe("div");
+      expect(result.props.children).toEqual(
+        <span className="heading">Title</span>
+      );
+
+      // O Jest também pode criar arquivos snapshot
+      // que serão usados para checagem de mudanças nos próximos testes
+      // expect(result).toMatchSnapshot();
+    });
+  });
+
+  // é possível também prototipar partes do código alvo com o Jest
+
+  // aqui usamos a parte mock do Jest como um stand-alone
+  // normalmente isso seria parte do objeto global "jest"
+  const jest = window["jest-mock"];
+
+  // prototipando uma função para testar o comportamento do callback
+  const mockCallback = jest.fn();
+
+  describe("Callback", () => {
+    it("should be called two  times", () => {
+      // uma função teste que chama o callback duas vezes
+      const callCallback = c => {
+        c();
+        c();
+      };
+
+      callCallback(mockCallback);
+
+      // a função prototipada tem algumas propriedades para checar sua usabilidade
+      expect(mockCallback.mock.calls.length).toBe(2);
+    });
+  });
+
+  mocha.checkLeaks();
+  mocha.run();
+</script>
