@@ -1,6 +1,6 @@
 <!doctype html>
 
-<title>16 Advanced Integration - React From Zero</title>
+<title>16 Продвинутая интеграция - React с нуля</title>
 
 <script src="https://unpkg.com/react@16.4.0/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@16.4.0/umd/react-dom.development.js"></script>
@@ -8,22 +8,22 @@
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
 <script src="https://unpkg.com/d3@4.7.3/build/d3.min.js">
-// Sometimes we need to integrate more complex
-// libraries. Libraries that want to use the
-// DOM directly or require asynchronous interaction.
-// In this example we use D3.js, a free InfoVis library.
+// Иногда нам нужно интегрировать более сложные
+// библиотеки. Библиотеки, которые хотят использовать
+// DOM напрямую или требует асинхронного взаимодействия.
+// В этом примере мы используем D3.js, бесплатную библиотеку от InfoVis.
 </script>
 
 <div id="app"></div>
 
 <script type="text/babel">
-// Since D3 needs to interact directly with the DOM we
-// should use a component class, because it can store
-// references to its DOM-elements.
+// Поскольку D3 необходимо напрямую взаимодействовать с DOM, мы
+// должны использовать класс компонента, поскольку он может хранить
+// ссылки на его DOM-элементы.
 var Visual = createReactClass({
 
-  // We simply render an empty canvas and tell React to
-  // store its reference after the render
+  // Мы просто отрисовываем пустой холст и указываем React,
+  // сохранить ссылку на него после отрисовки
   render: function() {
     return <canvas ref={this.handleRef} width={500} height={500}/>
   },
@@ -32,38 +32,38 @@ var Visual = createReactClass({
     this.canvas = canvas
   },
 
-  // After the first render, we grab the reference
-  // to the canvas element in the DOM and pass it
-  // to the library
+  // После первой отрисовки мы берём ссылку
+  // на элемент canvas в DOM и передаём
+  // его в библиотеку
   componentDidMount: function() {
-    // Here we also use some additional color configuration
+    // Здесь мы также используем дополнительную конфигурацию цвета
     drawGraph(this.canvas, this.props.color)
   },
 
-  // We also have some fine-granular control over the re-render
-  // With the use of this lifecylce method
+  // У нас также есть тонкий контроль над повторной отрисовкой
+  // С использованием этого метода жизненного цикла
   shouldComponentUpdate: function(nextProps, nextState) {
-    // Here we could tell our library the new data for props
-    // or state, so it can update the DOM elements on its own
+    // Здесь мы можем указать нашей библиотеке новые данные для свойств
+    // или состоянию, чтобы он мог самостоятельно обновлять элементы DOM
 
-    // At the end we always return false so our render method
-    // isn't called and the canvas element isn't replaced
+    // В конце мы всегда возвращаем false, поэтому наш метод render
+    // не вызывается, а элемент canvas не заменяется
     return false
   },
 
-  // This lifecycle method can be used to free resources
-  // before the component will be removed from the DOM.
-  // Our canvas will be removed for sure, but often there
-  // is state for the library, other objects, listeners etc.
-  // they could be stored on the component and should be
-  // deleted to prevent memory leaks
+  // Этот метод жизненного цикла может использоваться для освобождения ресурсов
+  // до того, как компонент будет удалён из DOM.
+  // Наш холст наверняка будет удалён, но часто
+  // есть состояние для библиотеки, других объектов, слушателей и т.д.
+  // они могут быть сохранены в компоненте и должны
+  // быть удалены, чтобы предотвратить утечку памяти
   componentWillUnmount() {},
 
 })
 
-// Now we can use the library as a component
-// No need for global IDs, every instance has its own canvas
-// reference stored, also its own color property
+// Теперь мы можем использовать библиотеку как компонент
+// Нет необходимости в глобальных идентификаторах, каждый экземпляр имеет
+// свою ссылку на холст, а также его собственное свойство цвета
 var reactElement =
   <div>
     <Visual color="#f00"/>
@@ -73,11 +73,11 @@ var reactElement =
 
 ReactDOM.render(reactElement, document.getElementById("app"))
 
-// Wrapping the library interaction into a function
+// Вынос работы с библиотекой в функцию
 function drawGraph(canvas, strokeColor) {
 
-  // An example from http://bl.ocks.org/mbostock/1b64ec067fcfc51e7471d944f51f1611
-  // its realeased under the GPL-V3
+  // Пример с http://bl.ocks.org/mbostock/1b64ec067fcfc51e7471d944f51f1611
+  // распространяется под лицензией GPL-V3
 
   var n = 20
 
