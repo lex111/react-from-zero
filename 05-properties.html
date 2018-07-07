@@ -1,6 +1,6 @@
 <!doctype html>
 
-<title>05 Properties - React From Zero</title>
+<title>05 Свойства - React с нуля</title>
 
 <script src="https://unpkg.com/react@16.4.0/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@16.4.0/umd/react-dom.development.js"></script>
@@ -9,11 +9,11 @@
 <div id="app"></div>
 
 <script type="text/babel">
-// Components, like elements, can use properties, too
+// Компоненты, подобно элементам, также могут использовать свойства
 function MyComponent(props) {
   return (
     <div className={props.className}>
-      <h1>Hello</h1>
+      <h1>Привет</h1>
       <h2>{props.customData}</h2>
     </div>
   )
@@ -21,7 +21,7 @@ function MyComponent(props) {
 
 var reactElement = <MyComponent className="abc" customData="world"/>
 
-// Which also works with an object and the spread (...) operator
+// Которые также представлены в виде объекте и работают с оператором расширения (...)
 var props = {
   className: "abc",
   customData: "world",
@@ -29,10 +29,10 @@ var props = {
 
 reactElement = <MyComponent {...props}/>
 
-// This allows components with dynamic content
+// Это позволяет иметь компоненты с динамическим контентом
 var planets = ["earth", "mars", "venus"]
 
-// If an array is used as "child node" each child needs a unique key-property
+// Если массив используется как «дочерний узел», каждому дочернему элементу нужен уникальный ключ-свойство
 var elements = planets.map(function(planet, index) {
   return <MyComponent className="myClass" customData={planet} key={index}/>
 })
