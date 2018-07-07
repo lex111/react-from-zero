@@ -1,6 +1,6 @@
 <!doctype html>
 
-<title>08 Nested Components - React From Zero</title>
+<title>08 Вложенные компоненты - React с нуля</title>
 
 <script src="https://unpkg.com/react@16.4.0/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@16.4.0/umd/react-dom.development.js"></script>
@@ -9,25 +9,25 @@
 <div id="app"></div>
 
 <script type="text/babel">
-// Components, like elements, can be nested
-// for this, the children property is used inside the component
+// Компоненты, такие как элементы, могут быть вложены
+// для этого, свойство children используется внутри компонента
 
-// This component just wraps its children in an <li> element
+// Этот компонент просто оборачивает дочерние элементы в элемент <li>
 function Item(props) {
   return <li>{props.children}</li>
 }
 
-// This component wraps its children into an <ul> element
+// Этот компонент оборачивает дочерние элементы в элемент <ul>
 function List(props) {
   return <ul>{props.children}</ul>
 }
 
-// If the <List> is created without children it gets a default child
+// Если <List> создаётся без дочерних элементов, он получает дочерний элемент по умолчанию
 List.defaultProps = {
-  children: <Item>Empty</Item>
+  children: <Item>Пустой</Item>
 }
 
-// now we render two <List>s, without and with Items
+// теперь мы отрисовываем два компонента <List>, без и с элементами
 var reactElement =
   <div>
     <List/>
