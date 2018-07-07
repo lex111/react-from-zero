@@ -1,67 +1,67 @@
-# React From Zero
+# React с нуля
 
-A simple (99% ES2015 less) tutorial for React
+Простое (не менее 99% ES2015) обучающее руководство по React
 
-Everything runs in the browser without a manual pre-compilation.
+Всё работают в браузере предварительной компиляции вручную
 
-## Translations
+## Переводы
 
 - [![china](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/China.png) **中文/Chinese**](https://github.com/chinanf-boy/react-from-zero)
 
 - [![brazil](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Brazil.png) **Brazilian Portuguese**](https://github.com/andre-motta/react-from-zero)
 
-## Lessons
+## Уроки
 
-[Lesson 0 - Object Elements](https://github.com/kay-is/react-from-zero/blob/master/00-object-elements.html) -
-[Preview](https://cdn.rawgit.com/kay-is/react-from-zero/b31878c2/00-object-elements.html)
+[Урок 0 — Элементы-объекты ](https://github.com/lex111/react-from-zero/blob/master/00-object-elements.html) —
+[Предварительный просмотр](https://cdn.rawgit.com/lex111/react-from-zero/b31878c2/00-object-elements.html)
 
-[Lesson 1 - Element Factory](https://github.com/kay-is/react-from-zero/blob/master/01-element-factory.html) -
-[Preview](https://cdn.rawgit.com/kay-is/react-from-zero/b31878c2/01-element-factory.html)
+[Урок 1 — Фабрика элементов](https://github.com/lex111/react-from-zero/blob/master/01-element-factory.html) —
+[Предварительный просмотр](https://cdn.rawgit.com/lex111/react-from-zero/b31878c2/01-element-factory.html)
 
-[Lesson 2 - JSX](https://github.com/kay-is/react-from-zero/blob/master/02-jsx.html) -
-[Preview](https://cdn.rawgit.com/kay-is/react-from-zero/b31878c2/02-jsx.html)
+[Урок 2 — JSX](https://github.com/lex111/react-from-zero/blob/master/02-jsx.html) —
+[Предварительный просмотр](https://cdn.rawgit.com/lex111/react-from-zero/b31878c2/02-jsx.html)
 
-[Lesson 3 - Nested Elements](https://github.com/kay-is/react-from-zero/blob/master/03-nested-elements.html) -
-[Preview](https://cdn.rawgit.com/kay-is/react-from-zero/b31878c2/03-nested-elements.html)
+[Урок 3 — Вложенные элементы](https://github.com/lex111/react-from-zero/blob/master/03-nested-elements.html) —
+[Предварительный просмотр](https://cdn.rawgit.com/lex111/react-from-zero/b31878c2/03-nested-elements.html)
 
-[Lesson 4 - Components](https://github.com/kay-is/react-from-zero/blob/master/04-components.html) -
-[Preview](https://cdn.rawgit.com/kay-is/react-from-zero/b31878c2/04-components.html)
+[Урок 4 — Компоненты](https://github.com/lex111/react-from-zero/blob/master/04-components.html) —
+[Предварительный просмотр](https://cdn.rawgit.com/lex111/react-from-zero/b31878c2/04-components.html)
 
-[Lesson 5 - Properties](https://github.com/kay-is/react-from-zero/blob/master/05-properties.html) -
-[Preview](https://cdn.rawgit.com/kay-is/react-from-zero/62dc2789/05-properties.html)
+[Урок 5 — Свойства](https://github.com/lex111/react-from-zero/blob/master/05-properties.html) —
+[Предварительный просмотр](https://cdn.rawgit.com/lex111/react-from-zero/62dc2789/05-properties.html)
 
-[Lesson 6 - Property Types](https://github.com/kay-is/react-from-zero/blob/master/06-property-types.html) -
-[Preview](https://cdn.rawgit.com/kay-is/react-from-zero/b31878c2/06-property-types.html)
+[Урок 6 — Типы свойства](https://github.com/lex111/react-from-zero/blob/master/06-property-types.html) —
+[Предварительный просмотр](https://cdn.rawgit.com/lex111/react-from-zero/b31878c2/06-property-types.html)
 
-[Lesson 7 - Property Example](https://github.com/kay-is/react-from-zero/blob/master/07-property-example.html) -
-[Preview](https://cdn.rawgit.com/kay-is/react-from-zero/b31878c2/07-property-example.html)
+[Урок 7 — Пример свойства](https://github.com/lex111/react-from-zero/blob/master/07-property-example.html) —
+[Предварительный просмотр](https://cdn.rawgit.com/lex111/react-from-zero/b31878c2/07-property-example.html)
 
-[Lesson 8 - Nested Components](https://github.com/kay-is/react-from-zero/blob/master/08-nested-components.html) -
-[Preview](https://cdn.rawgit.com/kay-is/react-from-zero/b31878c2/08-nested-components.html)
+[Урок 8 — Вложенные компоненты](https://github.com/lex111/react-from-zero/blob/master/08-nested-components.html) —
+[Предварительный просмотр](https://cdn.rawgit.com/lex111/react-from-zero/b31878c2/08-nested-components.html)
 
-[Lesson 9 - Component Classes](https://github.com/kay-is/react-from-zero/blob/master/09-component-classes.html) -
-[Preview](https://cdn.rawgit.com/kay-is/react-from-zero/b31878c2/09-component-classes.html)
+[Урок 9 — Классы компонентов](https://github.com/lex111/react-from-zero/blob/master/09-component-classes.html) —
+[Предварительный просмотр](https://cdn.rawgit.com/lex111/react-from-zero/b31878c2/09-component-classes.html)
 
-[Lesson 10 - Example App](https://github.com/kay-is/react-from-zero/blob/master/10-example-app.html) -
-[Preview](https://cdn.rawgit.com/kay-is/react-from-zero/b31878c2/10-example-app.html)
+[Урок 10 — Пример приложения](https://github.com/lex111/react-from-zero/blob/master/10-example-app.html) —
+[Предварительный просмотр](https://cdn.rawgit.com/lex111/react-from-zero/b31878c2/10-example-app.html)
 
-[Lesson 11 - Lifecycle Methods](https://github.com/kay-is/react-from-zero/blob/master/11-lifecycle-methods.html) -
-[Preview](https://cdn.rawgit.com/kay-is/react-from-zero/b31878c2/11-lifecycle-methods.html)
+[Урок 11 — Методы жизненного цикла](https://github.com/lex111/react-from-zero/blob/master/11-lifecycle-methods.html) —
+[Предварительный просмотр](https://cdn.rawgit.com/lex111/react-from-zero/b31878c2/11-lifecycle-methods.html)
 
-[Lesson 12 - Component refactor](https://github.com/kay-is/react-from-zero/blob/master/12-component-refactor.html) -
-[Preview](https://cdn.rawgit.com/kay-is/react-from-zero/b31878c2/12-component-refactor.html)
+[Урок 12 — Рефакторинг компонента](https://github.com/lex111/react-from-zero/blob/master/12-component-refactor.html) —
+[Предварительный просмотр](https://cdn.rawgit.com/lex111/react-from-zero/b31878c2/12-component-refactor.html)
 
-[Lesson 13 - Element Refactor](https://github.com/kay-is/react-from-zero/blob/master/13-element-refactor.html) -
-[Preview](https://cdn.rawgit.com/kay-is/react-from-zero/b31878c2/13-element-refactor.html)
+[Урок 13 — Рефакторинг элемента](https://github.com/lex111/react-from-zero/blob/master/13-element-refactor.html) —
+[Предварительный просмотр](https://cdn.rawgit.com/lex111/react-from-zero/b31878c2/13-element-refactor.html)
 
-[Lesson 14 - References](https://github.com/kay-is/react-from-zero/blob/master/14-references.html) -
-[Preview](https://cdn.rawgit.com/kay-is/react-from-zero/b31878c2/14-references.html)
+[Урок 14 — Ссылки](https://github.com/lex111/react-from-zero/blob/master/14-references.html) —
+[Предварительный просмотр](https://cdn.rawgit.com/lex111/react-from-zero/b31878c2/14-references.html)
 
-[Lesson 15 - Simple Integration](https://github.com/kay-is/react-from-zero/blob/master/15-simple-integration.html) -
-[Preview](https://cdn.rawgit.com/kay-is/react-from-zero/b31878c2/15-simple-integration.html)
+[Урок 15 — Простая интеграция](https://github.com/lex111/react-from-zero/blob/master/15-simple-integration.html) —
+[Предварительный просмотр](https://cdn.rawgit.com/lex111/react-from-zero/b31878c2/15-simple-integration.html)
 
-[Lesson 16 - Advanced Integration](https://github.com/kay-is/react-from-zero/blob/master/16-advanced-integration.html) -
-[Preview](https://cdn.rawgit.com/kay-is/react-from-zero/b31878c2/16-advanced-integration.html)
+[Урок 16 — Продвинутая интеграция](https://github.com/lex111/react-from-zero/blob/master/16-advanced-integration.html) —
+[Предварительный просмотр](https://cdn.rawgit.com/lex111/react-from-zero/b31878c2/16-advanced-integration.html)
 
-[Lesson 17 - Unit Testing](https://github.com/kay-is/react-from-zero/blob/master/17-unit-testing.html) -
-[Preview](https://cdn.rawgit.com/kay-is/react-from-zero/7dc8cf9b/17-unit-testing.html)
+[Урок 17 — Модульное тестирование](https://github.com/lex111/react-from-zero/blob/master/17-unit-testing.html) —
+[Предварительный просмотр](https://cdn.rawgit.com/lex111/react-from-zero/7dc8cf9b/17-unit-testing.html)
