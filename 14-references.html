@@ -1,6 +1,6 @@
 <!doctype html>
 
-<title>14 References - React From Zero</title>
+<title>14 Ссылки - React с нуля</title>
 
 <script src="https://unpkg.com/react@16.4.0/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@16.4.0/umd/react-dom.development.js"></script>
@@ -10,14 +10,14 @@
 <div id="app"></div>
 
 <script type="text/babel">
-// Sometimes we need some state from an element or a component
-// or it has to be directly modified somehow. For
-// this case, we can tell React to create references.
+// Иногда нам нужно некоторое состояние из элемента или компонента
+// или он должен быть каким-то образом изменён. Для
+// этого случая, мы можем указать React создать ссылки.
 var RefComponent = createReactClass({
 
-  // First we tell React to render an input with a
-  // ref callback, it will be called, when the DOM of the input element
-  // is available
+   // Сначала мы сообщаем React отрисовать поле ввоода с помощью
+   // с помощью колбэка ref, он будет вызываться, когда будет
+   // доступен DOM элемента с полем ввода
   render: function() {
     return (
       <div>
@@ -27,17 +27,17 @@ var RefComponent = createReactClass({
     )
   },
 
-  // This callback is called when the input element was mounted into the DOM
-  // and again, with null, when it was unmounted again
-  // For elements the rendered DOM node will be stored
-  // For components the instance of the component will be stored.
+  // Этот колбэк вызывается, когда элемент с полем ввода был примонтирован в DOM,
+  // и ещё раз, со значением null, когда он размонтирован
+  // Для элементов будет сохранен отрисованный DOM-узел
+  // Для компонентов экземпляр компонента будет сохранен.
   handleRef(nameInput) {
-    // We save a reference to it for later use.
+    // Мы сохраняем ссылку на неё для последующего использования.
     this.nameInput = nameInput
   },
 
-  // This callback is called when the button is clicked
-  // and uses this.nameInput to read out the value of the input.
+  // Этот колбэк вызывается при нажатии кнопки
+  // и использует this.nameInput для считывания значения поле ввода.
   handleClick: function() {
     console.log(this.nameInput.value)
   },
@@ -48,6 +48,11 @@ var RefComponent = createReactClass({
 // they can be used as local IDs to get elements
 // and don't override each other when another
 // instance of the component is created
+
+// Поскольку ссылки локальны для их компонента,
+// их можно использовать в качестве локальных идентификаторов для получения элементов
+// и не переопределять друг друга
+// при создании другого экземпляра компонента
 var reactElement =
   <div>
     <RefComponent/>
