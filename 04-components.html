@@ -1,6 +1,6 @@
 <!doctype html>
 
-<title>04 Components - React From Zero</title>
+<title>04 Компоненты - React с нуля</title>
 
 <script src="https://unpkg.com/react@16.4.0/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@16.4.0/umd/react-dom.development.js"></script>
@@ -9,21 +9,21 @@
 <div id="app"></div>
 
 <script type="text/babel">
-// The main selling point of React is its component system
-// components are used to encapsulate elements and their behaviour
-// see them as a mix of controller and view of MVC
+// Главный ключевой момент React — это его система компонентов,
+// которая используется для инкапсуляции элементов и их поведения,
+// рассматривайте их как смесь контроллера и представления из модели MVC
 
-// Here we use stand alone elements and some data
-var data = "world"
+// Здесь мы используем отдельные элементы и некоторые данные
+var data = "мир"
 var reactElement =
   <div>
-    <h1>Hello</h1>
+    <h1>Привет, </h1>
     <h2>{data}</h2>
   </div>
 
-// Here the elements are encapsuled in a simple component function
-// They have to start with a capital letter and
-// return exactly ONE root element with or without nested elements (before React 16)
+// Здесь элементы инкапсулированы в простую функцию-компонент
+// Они должны начинаться с прописной буквы и
+// возвращать ровно ОДИН корневой элемент с или без вложенных элементов (до React 16)
 function MyComponent() {
   var data = "world"
   return (
@@ -34,22 +34,22 @@ function MyComponent() {
   )
 }
 
-// Since React 16.0.0, components can return an array of elements as well
-// In doing so, no additional wrapper element is created
-// One caveat is that, similarly to what we do when rendering an array,
-// we have to add a unique key to each element in the array, also don't forget the commas
-// (we'll see more on this in the next lesson)
+// Начиная с React 16.0.0, компоненты также могут возвращать массив элементов
+// При этом никакой дополнительный элемент-обёртка не создается
+// Одно из предостережений заключается в том, что, подобно тому, что мы делаем при отрисовке массива
+// нам нужно добавить уникальный ключ к каждому элементу массива, также не забывайте про запятые
+// (об этом мы увидим в следующем уроке)
 function MyComponent() {
-  var data = "world"
+  var data = "мир"
   return [
-    <h1 key="hello">Hello</h1>,
+    <h1 key="hello">Привет, </h1>,
     <h2 key="data">{data}</h2>
   ]
 }
 
-// Since React 16.2.0, we can use special "wrapper" components called fragments
-// that behave the same (no extra wrapper element created)
-// but remove the need to explicitly set keys (fragments do this under the hood) and commas
+// Начиная с React 16.2.0, мы можем использовать специальные "обёрточные" компоненты, называемые фрагментами
+// которые ведут себя одинаково (не создают дополнительный элемент-обёртку)
+// но устраняют необходимость устанавливать ключи (фрагменты делают это под капотом) и указывать запятые
 function MyComponent() {
   var data = "world"
   return (
@@ -60,16 +60,16 @@ function MyComponent() {
   )
 }
 
-// a component function can be used like an element
+// Функция-компонент может использоваться как элемент
 reactElement = <MyComponent/>
 
-// this translates to a React.createElement() call
-// the null indicates that no properties have been set
+// Это преобразуется на вызов React.createElement()
+// null указывает, что свойства не были установлены
 reactElement = React.createElement(MyComponent, null)
 
-//  for reference a react-internal <div> tag
+// для справки — внутренний тег React <div>
 var anotherElement = <div/>
-// gets converted to
+// преобразуется в
 anotherElement = React.createElement("div", null)
 
 var renderTarget = document.getElementById("app")
