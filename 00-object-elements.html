@@ -1,73 +1,73 @@
 <!doctype html>
 
-<title>00 Object Elements - React From Zero</title>
+<title>00 Элементы-объекты - React с нуля</title>
 
 <script src="https://unpkg.com/react@16.4.0/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@16.4.0/umd/react-dom.development.js"></script>
 
 <div id="app">
-  <!--The render target of our React application-->
+  <!-- Место отрисовки нашего React-приложения -->
 </div>
 
 <script>
-  // React uses ES2015 Symbols to "tag" its element-objects.
-  // It uses a magic number as fallback on older browsers.
+  // React использует символы из ES2015, чтобы "отметить" их как элементы-объекты.
+  // Он использует магическое число в качестве фолбэка для старых браузеров.
   var magicValue = (Symbol && Symbol.for("react.element")) || 0xeac7
 
-  // React uses virtual DOM elements, which become real DOM elements on a render.
-  // A virtual DOM element can be defined as a simple object literal.
-  // Normally you would use the React.createElement() to create an element.
-  // This is what the return value of a React.createElement() call could look like.
+  // React использует виртуальные DOM-элементы, которые станут настоящими элементами DOM при отрисовке.
+  // Виртуальный DOM-элемент может быть определён как простой объектный литерал.
+  // Обычно для создания элемента используется React.createElement().
+  // Вот как выглядит возвращаемое значение при вызове React.createElement().
   var reactElement = {
 
-    // This special property will be checked by React to ensure this object
-    // is a React element and not just some user data
-    // React.createElement() sets it for you
+    // Это специальное свойство будет проверено React для обеспечения того, что этот объект
+    // является элементом React, а не просто какими-нибудь пользовательскими данными
+    // React.createElement() устанавливает его для вас
     $$typeof: magicValue,
 
-    // This will also be checked by React. We will be talking about references
-    // later, but if you're not using them, this has to be set to null and not
-    // undefined
+    // Это также будет проверено React. Мы будем говорить о ссылках
+    // позже, но если вы их не используете, это свойство должно быть установлено в значение null, а не
+    // не быть undefined
     ref: null,
 
-    // This defines the HTML-tag
+    // Это определяет HTML-тег
     type: "h1",
 
-    // This defines the properties that get passed down into the element
+    // Это определяет свойства, которые передаются в элемент
     props: {
 
-      // In this example there is just a single text node as child
-      children: "Hello, world!",
+      // В этом примере только один текстовый узел является дочерним
+      children: "Привет, мир!",
 
-      // a CSS class
+      // CSS-класс
       className: "abc",
 
-      // styles can be passed as object literals
-      // React uses camelCase instead of dashed-case (like CSS/D3 do)
+      // Стили могут передаваться в виде объектных литералов
+      // React использует camelCase вместо dashed-case (например, для CSS/D3)
       style: {
         textAlign: "center",
       },
 
-      // event handlers can be added as properties, too
-      // React uses synthetic events, which basically try to normalize browser behaviour
+      // обработчики событий также могут быть добавлены как свойства
+      // React использует синтетические события, которые в основном пытаются нормализовать поведение браузера
       onClick: function (notYourRegularEvent) { alert("click") },
     },
 
   }
 
-  // another element that doesn"t have much configuration
+  // другой элемент без большой конфигурации
   var anotherElement = {
     $$typeof: magicValue,
     ref: null,
     type: "p",
     props: {
-      children: "A nice text paragraph.",
+      children: "Классный абзац текста.",
     },
   }
 
-  // React needs a DOM element as render target
+  // React нужен DOM-элемент в качестве цели для отрисовки
   var renderTarget = document.getElementById("app")
 
-  // ReactDOM is responsible for inserting the element into the DOM
+  // ReactDOM отвечает за вставку элемента в DOM
   ReactDOM.render(reactElement, renderTarget)
 </script>
