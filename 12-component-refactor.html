@@ -1,6 +1,6 @@
 <!doctype html>
 
-<title>12 Component Refactor - React From Zero</title>
+<title>12 Рефакторинг компонентов - React с нуля</title>
 
 <script src="https://unpkg.com/react@16.4.0/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@16.4.0/umd/react-dom.development.js"></script>
@@ -11,19 +11,19 @@
 <div id="app"></div>
 
 <script type="text/babel">
-// Refactoring is another thing that is nice with React
-// First we'll talk about refactoring one component into another
-// if you're lucky, you can just change the implementation of a component
-// and don't need to change anything at the call-site
+// Рефакторинг —  это то, что заслуживает внимание React
+// Сначала мы поговорим о рефакторинге одного компонента в другой
+// если вам повезёт, вы можете просто изменить реализацию компонента
+// и не потребуется менять место вызова
 
-// We start with a component that renders records somehow
+// Начнем с компонента, который каким-то образом отрисовывает записи
 function ViewBefore(props) {
   return (
     <table>
       <thead>
         <tr>
-          <th>Room</th>
-          <th>People</th>
+          <th>Комната</th>
+          <th>Люди</th>
         </tr>
       </thead>
       <tbody>
@@ -38,12 +38,12 @@ function ViewBefore(props) {
   )
 }
 
-// The component has a simple props-interface
+// У компонента имеет простой интерфейс свойств
 ViewBefore.propTypes = {
   rooms: PropTypes.array.isRequired,
 }
 
-// Now we switch out the implementation with something more complicated
+// Теперь мы изменим реализацию на более сложную
 function ViewAfter(props) {
   return (
     <div>
@@ -55,24 +55,24 @@ function ViewAfter(props) {
         }
         return <div key={k}>
           {room.people > 0
-            ? <span style={barStyle}>{room.people} People</span>
-            : <span>0 People</span>
+            ? <span style={barStyle}>{room.people} людей</span>
+            : <span>0 людей</span>
           }
-          <span> in {room.name}</span>
+          <span> в комнате {room.name}</span>
         </div>
       })}
     </div>
   )
 }
-// We keep the props-interface the same
+// Мы поддерживаем интерфейс свойства идентичным
 ViewAfter.propTypes = {
   rooms: PropTypes.array.isRequired,
 }
 
-// We could also switch it with something more dynamic
+// Мы могли бы также сделать компонент более динамичным
 var ViewDynamic = createReactClass({
 
-  // We still keep the props-interface the same
+  // Мы по-прежнему поддерживаем интерфейс свойств
   propTypes: {
     rooms: PropTypes.array.isRequired,
   },
@@ -102,7 +102,7 @@ var ViewDynamic = createReactClass({
 
     return (
       <span style={{color: this.state.color}}>
-        Room <b>{room.name}</b> has <b>{room.people}</b> People.
+        В комнате <b>{room.name}</b> <b>{room.people}</b> людей.
       </span>
     )
   },
@@ -111,25 +111,25 @@ var ViewDynamic = createReactClass({
 
 // Some data
 var rooms = [
-  {name:"Office", people: 10},
-  {name:"Kitchen", people: 15},
-  {name:"Floor", people: 3},
-  {name:"Bathroom", people: 0},
+  {name:"Офис", people: 10},
+  {name:"Кухня", people: 15},
+  {name:"Зал заседаний", people: 3},
+  {name:"Ванная", people: 0},
 ]
 
-// As we can see the components can be used exactly the same
-// If we copy the implementation of ViewAfter into ViewBefore,
-// everything keeps working
+// Как мы видим, компоненты могут использоваться точно так же
+// Если мы скопируем реализацию ViewAfter в ViewBefore
+// всё будет работать
 var reactElement =
   <div style={{margin: "auto", width: 500}}>
 
-    <h3>Before the refactor</h3>
+    <h3>До рефакторинга</h3>
     <ViewBefore rooms={rooms}/>
 
-    <h3>After the refactor</h3>
+    <h3>После рефакторинга</h3>
     <ViewAfter rooms={rooms}/>
 
-    <h3>Dynamic refactor</h3>
+    <h3>После рефакторинга с помощью класса компонента</h3>
     <ViewDynamic rooms={rooms}/>
 
   </div>
