@@ -1,75 +1,75 @@
 <!DOCTYPE html>
 
-<title>17 Unit Testing - React From Zero</title>
+<title>17 Модульное тестирование - React с нуля</title>
 
 <script src="https://unpkg.com/react@16.4.0/umd/react.development.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
 <script src="https://unpkg.com/mocha@5.2.0/mocha.js">
-  // the basic test tool for React is Jest, but it doesn't run in the browser
-  // that's why we only use parts of Jest (expect and jest-mock) here to
-  // illustrate basic testing setup. Mocha is used as an alternative test runner
+  // основной инструмент для тестирования в React — это Jest, но он не запускается в браузере
+  // Именно поэтому мы используем только части Jest (expect и jest-mock)
+  // чтобы проиллюстрировать простую установку тестирования. Mocha используется как альтернативный исполнитель тестов
 </script>
 <link href="https://unpkg.com/mocha@5.2.0/mocha.css" rel="stylesheet" />
 
 <!--
-  the shallow renderer is needed to render components without the need of
-  ReactDOM or a DOM in general
+  Поверхностный отрисовщик необходимым для отрисовки компонентов без необходимости
+  ReactDOM или DOM в целом
 -->
 <script src="https://unpkg.com/react-test-renderer@16.4.1/umd/react-test-renderer-shallow.development.js"></script>
 
-<!-- these two libraries are parts of the Jest tooling -->
+<!-- Эти две библиотеки являются частью инструмента Jest -->
 <script src="https://unpkg.com/expect@%3C21/umd/expect.min.js"></script>
 <script src="https://unpkg.com/jest-mock@23.2.0/build-es5/index.js"></script>
 
-<!-- the render target of the Mocha test results -->
+<!-- Цель отрисовки результатов теста Mocha -->
 <div id="mocha"></div>
 
 <script type="text/babel">
-  // if you use Jest later, ignore Mocha specific code
+  // Если вы в дальнейшем будете использовать Jest, игнорируйте специальный код для Mocha
   mocha.setup("bdd");
 
-  // a simple component. It would normally be imported from another file
+  // Простой компонент. Обычно он импортируется из другого файла
   const MyComponent = () => (
     <div>
-      <span className="heading">Title</span>
+      <span className="heading">Заголовок</span>
     </div>
   );
 
-  // the first test, Jest and Mocha both using describe() and it()
+  // первый тест, Jest и Mocha, оба используют describe() и it()
   describe("Component", () => {
-    it("should render", () => {
-      // a new renderer is created and used to render the component
+    it("должен отрисовать компонент", () => {
+      // новый отрисовщик создаётся и используется для отрисовки компонента
       const renderer = new ReactShallowRenderer();
       renderer.render(<MyComponent />);
 
-      // result here should look quiet familiar from lesson 00
+      // результат должен выглядеть вполне обычным из урока 00
       let result = renderer.getRenderOutput();
 
-      // now you can traverse the result and check it for correctness
+      // теперь вы можете просмотреть результат и проверить его на правильность
       expect(result.type).toBe("div");
       expect(result.props.children).toEqual(
         <span className="heading">Title</span>
       );
 
-      // Jest can also create snapshot files
-      // they will be used to check for changes in the next test-runs
+      // Jest также может создавать файлы снимков (snapshot)
+      // они будут использоваться для проверки изменений в следующих тестах
       // expect(result).toMatchSnapshot();
     });
   });
 
-  // it is also possible to mock parts of target code with Jest
+  // также возможно имитировать части тестируемого (целевого) кода с помощью Jest
 
-  // here we use the mock part of Jest stand-alone
-  // normally this is part of the global "jest" object
+  // здесь мы используем имитационную часть Jest отдельно
+  // обычно это часть глобального объекта "jest"
   const jest = window["jest-mock"];
 
-  // mocking a function to test callback behaviour
+  // имитационная функция для тестирования поведения колбэка
   const mockCallback = jest.fn();
 
   describe("Callback", () => {
-    it("should be called two  times", () => {
-      // a test function that calls a callback two times
+    it("должна вызвана два раза", () => {
+      // тестовая функция, вызывающая колбэк два раза
       const callCallback = c => {
         c();
         c();
@@ -77,7 +77,7 @@
 
       callCallback(mockCallback);
 
-      // the mocked function has some properties to check its usage
+      // у имитационной функции есть некоторые свойства для проверки её использования
       expect(mockCallback.mock.calls.length).toBe(2);
     });
   });
