@@ -13,6 +13,8 @@ Tudo roda no browser sem uma pre-compilação manual.
 
 - [![brazil](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Brazil.png) **Portugês do Brasil**](https://github.com/andre-motta/react-from-zero)
 
+- [![Russia](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Russia.png) **Russian**](https://github.com/lex111/react-from-zero)
+
 ## Lessons
 
 [Lição 0 - Elementos-Objetos](https://github.com/andre-motta/react-from-zero/blob/master/00-object-elements.html) -
